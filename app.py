@@ -19,12 +19,13 @@ if __name__ == '__main__':
                 8: '01_palm',
                 9: '03_fist'
                 }
+    print("----------------------- Hand Gesture Detection -------------------------")
     path = str(input("Enter the valid path of an input image: "))
     img = load_image(path)
     img = preprocess_image(img)
     pred = MODEL.predict(img)[0]
     index = np.argmax(pred)
-    print(labels[index])
+    print("Detected Gesture: " + labels[index])
        
 
     
